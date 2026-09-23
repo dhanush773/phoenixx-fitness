@@ -34,7 +34,14 @@ function InstagramIcon() {
 function YouTubeIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
-      <rect x="2" y="5" width="20" height="14" rx="4" fill="currentColor" />
+      <rect
+        x="2"
+        y="5"
+        width="20"
+        height="14"
+        rx="4"
+        fill="currentColor"
+      />
       <path d="M10 8.5L16 12L10 15.5Z" fill="white" />
     </svg>
   );
@@ -341,6 +348,40 @@ function MealIcon() {
 }
 
 /* =========================
+   AMAZON ICON
+========================= */
+
+function AmazonIcon() {
+  return (
+    <div className="amazon-icon" aria-label="Amazon">
+      <span className="amazon-letter">a</span>
+
+      <svg
+        className="amazon-smile"
+        viewBox="0 0 40 12"
+        aria-hidden="true"
+      >
+        <path
+          d="M3 3C12 10 27 10 37 3"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M32 2L37 3L35 7"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
+/* =========================
    CALCULATORS
 ========================= */
 
@@ -616,6 +657,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+
                 <div className="essential-icon">
                   <Icon />
                   <span>{item.label}</span>
@@ -626,12 +668,19 @@ function App() {
                   <p>{item.description}</p>
                 </div>
 
-                <div
-                  className="essential-actions"
-                  aria-hidden="true"
-                >
-                  <span className="essential-arrow">›</span>
+                <div className="essential-actions">
+
+                  <AmazonIcon />
+
+                  <span
+                    className="essential-arrow"
+                    aria-hidden="true"
+                  >
+                    ›
+                  </span>
+
                 </div>
+
               </a>
             );
           })}
@@ -657,7 +706,10 @@ function App() {
           </p>
         </div>
 
-        <span className="arrow" aria-hidden="true">
+        <span
+          className="arrow"
+          aria-hidden="true"
+        >
           ↗
         </span>
       </a>
@@ -680,7 +732,10 @@ function App() {
           </p>
         </div>
 
-        <span className="arrow" aria-hidden="true">
+        <span
+          className="arrow"
+          aria-hidden="true"
+        >
           ↗
         </span>
       </a>

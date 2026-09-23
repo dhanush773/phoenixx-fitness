@@ -7,18 +7,36 @@
   font-synthesis: none;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   background: #ffffff;
 }
 
-button, a { font-family: inherit; }
-button { cursor: pointer; }
-a { color: inherit; text-decoration: none; }
+button,
+a {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   APP
+========================= */
 
 .app {
   width: 100%;
@@ -27,11 +45,15 @@ a { color: inherit; text-decoration: none; }
   padding: 24px 42px;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 .header {
   display: flex;
   align-items: center;
   padding: 12px 0 35px;
-  transition: opacity .35s, transform .35s;
+  transition: opacity 0.35s, transform 0.35s;
 }
 
 .header-hidden {
@@ -40,13 +62,17 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 
+/* =========================
+   LOGO
+========================= */
+
 .logo {
   display: inline-block;
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 800;
   font-size: 30px;
   letter-spacing: 2px;
-  line-height: .85;
+  line-height: 0.85;
   color: #080b1b;
 }
 
@@ -59,6 +85,10 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 6px;
   text-align: center;
 }
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
   display: flex;
@@ -95,11 +125,13 @@ a { color: inherit; text-decoration: none; }
   font-family: "Barlow Condensed", sans-serif;
   font-size: clamp(52px, 5vw, 82px);
   font-weight: 800;
-  line-height: .91;
+  line-height: 0.91;
   letter-spacing: 1px;
 }
 
-.hero h1 span { color: #963eff; }
+.hero h1 span {
+  color: #963eff;
+}
 
 .hero-description {
   max-width: 410px;
@@ -107,6 +139,10 @@ a { color: inherit; text-decoration: none; }
   font-size: 14px;
   line-height: 1.8;
 }
+
+/* =========================
+   SOCIALS
+========================= */
 
 .socials {
   display: flex;
@@ -122,7 +158,7 @@ a { color: inherit; text-decoration: none; }
   width: 31px;
   height: 31px;
   color: #080b1b;
-  transition: transform .2s, color .2s;
+  transition: transform 0.2s, color 0.2s;
 }
 
 .socials a:hover {
@@ -134,6 +170,10 @@ a { color: inherit; text-decoration: none; }
   width: 28px;
   height: 28px;
 }
+
+/* =========================
+   HERO IMAGE
+========================= */
 
 .hero-visual {
   position: relative;
@@ -168,13 +208,21 @@ a { color: inherit; text-decoration: none; }
   );
 }
 
-.mobile-logo { display: none; }
+.mobile-logo {
+  display: none;
+}
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
-.section { margin-bottom: 85px; }
+.section {
+  margin-bottom: 85px;
+}
 
-.section-heading { margin-bottom: 30px; }
+.section-heading {
+  margin-bottom: 30px;
+}
 
 .section-heading h2 {
   margin: 0 0 12px;
@@ -183,7 +231,7 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(34px, 4vw, 52px);
   font-weight: 800;
   line-height: 1;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
 .section-heading > p {
@@ -194,7 +242,10 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.7;
 }
 
-/* CALCULATORS - PRESERVED DARK STYLE */
+/* =========================
+   CALCULATORS
+   PRESERVED DARK STYLE
+========================= */
 
 .calculator-grid {
   display: grid;
@@ -211,11 +262,15 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid #292333;
   border-radius: 24px;
   background:
-    radial-gradient(circle at 90% 0%, rgba(130,70,255,.2), transparent 50%),
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(130, 70, 255, 0.2),
+      transparent 50%
+    ),
     linear-gradient(135deg, #17141f, #09090e);
   color: #ffffff;
   text-align: left;
-  transition: transform .25s, box-shadow .25s;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .calculator-card::before {
@@ -223,18 +278,30 @@ a { color: inherit; text-decoration: none; }
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(135deg, transparent 40%, rgba(255,255,255,.035));
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.035)
+  );
   pointer-events: none;
 }
 
 .calculator-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 45px rgba(91,52,180,.18);
+  box-shadow: 0 18px 45px rgba(91, 52, 180, 0.18);
 }
 
-.calculator-card.pink { border-color: #a85c91; }
-.calculator-card.blue { border-color: #4c8ebc; }
-.calculator-card.purple { border-color: #8064bd; }
+.calculator-card.pink {
+  border-color: #a85c91;
+}
+
+.calculator-card.blue {
+  border-color: #4c8ebc;
+}
+
+.calculator-card.purple {
+  border-color: #8064bd;
+}
 
 .card-glow {
   position: absolute;
@@ -244,7 +311,7 @@ a { color: inherit; text-decoration: none; }
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: rgba(165,82,255,.25);
+  background: rgba(165, 82, 255, 0.25);
   filter: blur(35px);
 }
 
@@ -255,34 +322,39 @@ a { color: inherit; text-decoration: none; }
   width: 82px;
   height: 82px;
   margin-bottom: 22px;
-  border: 1px solid rgba(255,255,255,.13);
+  border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 22px;
-  background: rgba(255,255,255,.055);
+  background: rgba(255, 255, 255, 0.055);
   color: #d9a5ff;
-  filter: drop-shadow(0 0 14px rgba(175,82,255,.35));
+  filter: drop-shadow(0 0 14px rgba(175, 82, 255, 0.35));
 }
 
-.neon-icon { width: 66px; height: 66px; }
+.neon-icon {
+  width: 66px;
+  height: 66px;
+}
 
 .calculator-card.pink .card-icon {
   color: #ff9bcf;
-  filter: drop-shadow(0 0 14px rgba(255,107,185,.35));
+  filter: drop-shadow(0 0 14px rgba(255, 107, 185, 0.35));
 }
 
 .calculator-card.blue .card-icon {
   color: #8cd4ff;
-  filter: drop-shadow(0 0 14px rgba(80,170,255,.35));
+  filter: drop-shadow(0 0 14px rgba(80, 170, 255, 0.35));
 }
 
-.calculator-card.purple .card-icon { color: #c5a0ff; }
+.calculator-card.purple .card-icon {
+  color: #c5a0ff;
+}
 
 .card-content h3 {
   margin: 0 0 12px;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 25px;
   font-weight: 800;
-  line-height: .98;
-  letter-spacing: .5px;
+  line-height: 0.98;
+  letter-spacing: 0.5px;
 }
 
 .card-content p {
@@ -303,7 +375,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid currentColor;
   border-radius: 50%;
   font-size: 20px;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
 .calculator-card .arrow {
@@ -312,9 +384,13 @@ a { color: inherit; text-decoration: none; }
   bottom: 20px;
 }
 
-.calculator-card:hover .arrow { transform: rotate(-45deg); }
+.calculator-card:hover .arrow {
+  transform: rotate(-45deg);
+}
 
-/* ESSENTIALS */
+/* =========================
+   FAVORITES & ESSENTIALS
+========================= */
 
 .essentials-list {
   display: flex;
@@ -334,12 +410,12 @@ a { color: inherit; text-decoration: none; }
   border-radius: 22px;
   background: #ffffff;
   text-align: left;
-  transition: transform .25s, box-shadow .25s;
+  transition: transform 0.25s, box-shadow 0.25s;
 }
 
 .essential-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(94,47,170,.12);
+  box-shadow: 0 12px 35px rgba(94, 47, 170, 0.12);
 }
 
 .essential-icon {
@@ -354,22 +430,39 @@ a { color: inherit; text-decoration: none; }
   color: #ffffff;
   text-align: center;
   background:
-    radial-gradient(circle at 30% 25%, rgba(255,255,255,.65), transparent 38%),
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.65),
+      transparent 38%
+    ),
     linear-gradient(135deg, #7c00ff, #19005c);
 }
 
-.essential-card.blue { border-color: #8dc9ff; }
-.essential-card.pink { border-color: #ff9bd0; }
+.essential-card.blue {
+  border-color: #8dc9ff;
+}
+
+.essential-card.pink {
+  border-color: #ff9bd0;
+}
 
 .essential-card.blue .essential-icon {
   background:
-    radial-gradient(circle at 30% 25%, rgba(255,255,255,.65), transparent 38%),
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.65),
+      transparent 38%
+    ),
     linear-gradient(135deg, #008cff, #003b91);
 }
 
 .essential-card.pink .essential-icon {
   background:
-    radial-gradient(circle at 30% 25%, rgba(255,255,255,.65), transparent 38%),
+    radial-gradient(
+      circle at 30% 25%,
+      rgba(255, 255, 255, 0.65),
+      transparent 38%
+    ),
     linear-gradient(135deg, #ff1493, #a00055);
 }
 
@@ -377,7 +470,7 @@ a { color: inherit; text-decoration: none; }
   width: 48px;
   height: 48px;
   color: #ffffff;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,.25));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.25));
 }
 
 .essential-icon span {
@@ -386,7 +479,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 12px;
   font-weight: 900;
   line-height: 1.1;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
 }
 
@@ -417,34 +510,69 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.55;
 }
 
+/* =========================
+   AMAZON ICON + ACTIONS
+========================= */
+
 .essential-actions {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 7px;
   width: 105px;
   flex-shrink: 0;
   background: #ffffff;
   color: #080b1b;
 }
 
+.amazon-icon {
+  width: 28px;
+  height: 31px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  flex-shrink: 0;
+}
+
+.amazon-letter {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: -0.5px;
+}
+
+.amazon-smile {
+  width: 21px;
+  height: 7px;
+  margin-top: 0;
+}
+
 .essential-arrow {
   color: #080b1b;
   font-size: 29px;
   line-height: 1;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
-.essential-card:hover .essential-arrow { transform: translateX(4px); }
+.essential-card:hover .essential-arrow {
+  transform: translateX(4px);
+}
 
-/* CONTACT + FOOTER */
+/* =========================
+   CONTACT
+========================= */
 
 .business-card {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .business-card:hover {
@@ -466,7 +594,13 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 75px;
   border: 1px solid #dfd1f5;
   border-radius: 26px;
-  background: radial-gradient(circle at 90% 0%, #f1e4ff, transparent 45%), #faf8ff;
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      #f1e4ff,
+      transparent 45%
+    ),
+    #faf8ff;
 }
 
 .business-card h2 {
@@ -486,6 +620,10 @@ a { color: inherit; text-decoration: none; }
 .mobile-contact-section {
   display: none;
 }
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
   padding: 40px 0;
@@ -513,17 +651,28 @@ footer p {
   letter-spacing: 3px;
 }
 
-/* TABLET + MOBILE */
+/* =========================
+   TABLET + MOBILE
+========================= */
 
 @media (max-width: 768px) {
+
   .app {
     padding: 0 12px 20px;
   }
+
+  /* =========================
+     HEADER
+  ========================= */
 
   .header {
     display: none;
     padding: 0;
   }
+
+  /* =========================
+     HERO
+  ========================= */
 
   .hero {
     flex-direction: column;
@@ -593,9 +742,17 @@ footer p {
     display: none;
   }
 
+  /* =========================
+     SECTIONS
+  ========================= */
+
   .section {
     margin-bottom: 60px;
   }
+
+  /* =========================
+     CALCULATORS
+  ========================= */
 
   .calculator-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -637,7 +794,11 @@ footer p {
     font-size: 15px;
   }
 
-  /* Mobile Favorites & Essentials */
+  /* =========================
+     MOBILE FAVORITES
+     & ESSENTIALS
+  ========================= */
+
   .essentials-section {
     margin-bottom: 45px;
   }
@@ -676,25 +837,58 @@ footer p {
     width: 118px;
     padding: 8px 5px;
     background:
-      linear-gradient(rgba(18, 7, 45, 0.25), rgba(18, 7, 45, 0.25)),
-      repeating-linear-gradient(0deg, transparent 0 11px, rgba(176, 139, 255, 0.28) 12px),
-      repeating-linear-gradient(90deg, transparent 0 11px, rgba(176, 139, 255, 0.28) 12px),
+      linear-gradient(
+        rgba(18, 7, 45, 0.25),
+        rgba(18, 7, 45, 0.25)
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0 11px,
+        rgba(176, 139, 255, 0.28) 12px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 11px,
+        rgba(176, 139, 255, 0.28) 12px
+      ),
       linear-gradient(135deg, #160b32, #020207);
   }
 
   .essential-card.blue .essential-icon {
     background:
-      linear-gradient(rgba(0, 40, 95, 0.25), rgba(0, 40, 95, 0.25)),
-      repeating-linear-gradient(0deg, transparent 0 11px, rgba(141, 201, 255, 0.25) 12px),
-      repeating-linear-gradient(90deg, transparent 0 11px, rgba(141, 201, 255, 0.25) 12px),
+      linear-gradient(
+        rgba(0, 40, 95, 0.25),
+        rgba(0, 40, 95, 0.25)
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0 11px,
+        rgba(141, 201, 255, 0.25) 12px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 11px,
+        rgba(141, 201, 255, 0.25) 12px
+      ),
       linear-gradient(135deg, #071d3f, #020207);
   }
 
   .essential-card.pink .essential-icon {
     background:
-      linear-gradient(rgba(90, 0, 55, 0.25), rgba(90, 0, 55, 0.25)),
-      repeating-linear-gradient(0deg, transparent 0 11px, rgba(255, 155, 208, 0.25) 12px),
-      repeating-linear-gradient(90deg, transparent 0 11px, rgba(255, 155, 208, 0.25) 12px),
+      linear-gradient(
+        rgba(90, 0, 55, 0.25),
+        rgba(90, 0, 55, 0.25)
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0 11px,
+        rgba(255, 155, 208, 0.25) 12px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent 0 11px,
+        rgba(255, 155, 208, 0.25) 12px
+      ),
       linear-gradient(135deg, #3b082c, #020207);
   }
 
@@ -723,16 +917,38 @@ footer p {
     display: none;
   }
 
+  /* =========================
+     MOBILE AMAZON ACTIONS
+  ========================= */
+
   .essential-actions {
     width: 45px;
-    gap: 10px;
+    gap: 5px;
+  }
+
+  .amazon-icon {
+    width: 22px;
+    height: 25px;
+  }
+
+  .amazon-letter {
+    font-size: 14px;
+    line-height: 13px;
+  }
+
+  .amazon-smile {
+    width: 17px;
+    height: 6px;
   }
 
   .essential-arrow {
     font-size: 23px;
   }
 
-  /* Mobile contact cards */
+  /* =========================
+     MOBILE CONTACT
+  ========================= */
+
   .business-card {
     display: none;
   }
@@ -785,6 +1001,10 @@ footer p {
     height: 25px;
   }
 
+  /* =========================
+     FOOTER
+  ========================= */
+
   footer {
     padding: 25px 0;
   }
@@ -798,4 +1018,3 @@ footer p {
     display: none;
   }
 }
-
