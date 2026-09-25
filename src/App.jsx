@@ -1,5 +1,10 @@
+import { useState } from "react";
 import "./App.css";
 import heroImage from "./assets/hero.png";
+import AIDietCoach from "./AIDietCoach";
+
+const DRIVE_RESOURCES_URL =
+  "https://drive.google.com/drive/folders/1upmRJgiGUu64u8naD56UZ2KspDHEqRM8?usp=sharing";
 
 /* =========================
    SOCIAL ICONS
@@ -166,7 +171,11 @@ function Vo2Icon() {
         strokeLinecap="round"
       />
       <circle cx="50" cy="70" r="7" fill="currentColor" />
-      <path d="M20 82H80" stroke="currentColor" strokeWidth="3" />
+      <path
+        d="M20 82H80"
+        stroke="currentColor"
+        strokeWidth="3"
+      />
       <text
         x="50"
         y="92"
@@ -241,30 +250,182 @@ function CreatineIcon() {
       className="neon-icon"
       aria-hidden="true"
     >
-      <path
-        d="M35 12H65V22L73 30V86Q73 94 65 94H35Q27 94 27 86V30L35 22Z"
+      {/* Main container */}
+      <rect
+        x="25"
+        y="28"
+        width="50"
+        height="62"
+        rx="3"
         fill="none"
         stroke="currentColor"
-        strokeWidth="5"
+        strokeWidth="4"
       />
-      <path
-        d="M35 12H65V22H35Z"
-        fill="currentColor"
+
+      {/* Simple lid */}
+      <rect
+        x="25"
+        y="10"
+        width="50"
+        height="18"
+        rx="4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="4"
       />
-      <text
-        x="50"
-        y="57"
-        textAnchor="middle"
-        fontSize="11"
-        fill="currentColor"
-      >
-        CREATINE
-      </text>
-      <path
-        d="M35 68H65"
+
+      {/* Simple lid grooves */}
+      <line
+        x1="34"
+        y1="14"
+        x2="34"
+        y2="24"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <line
+        x1="43"
+        y1="14"
+        x2="43"
+        y2="24"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <line
+        x1="52"
+        y1="14"
+        x2="52"
+        y2="24"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+      <line
+        x1="61"
+        y1="14"
+        x2="61"
+        y2="24"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
+      />
+
+      {/* Neck band */}
+      <line
+        x1="25"
+        y1="34"
+        x2="75"
+        y2="34"
         stroke="currentColor"
         strokeWidth="3"
       />
+
+      {/* Simple label */}
+      <line
+        x1="25"
+        y1="43"
+        x2="75"
+        y2="43"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+
+      <text
+        x="50"
+        y="63"
+        textAnchor="middle"
+        fill="currentColor"
+        fontSize="9"
+        fontWeight="900"
+        fontFamily="Arial, Helvetica, sans-serif"
+      >
+        CREATINE
+      </text>
+
+      <line
+        x1="25"
+        y1="72"
+        x2="75"
+        y2="72"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+
+      {/* Bottom base */}
+      <rect
+        x="22"
+        y="88"
+        width="56"
+        height="7"
+        rx="3"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+    </svg>
+  );
+}
+
+/* =========================
+   RESOURCE ICONS
+========================= */
+
+function FolderIcon() {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      className="essential-svg"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M10 28H39L47 38H90V78Q90 84 84 84H16Q10 84 10 78Z" />
+      <path d="M10 28V22Q10 16 16 16H36L44 26H84Q90 26 90 32V38" />
+    </svg>
+  );
+}
+
+function RobotIcon() {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      className="essential-svg"
+      aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* Antenna */}
+      <path d="M50 12V22" />
+      <circle cx="50" cy="8" r="4" fill="currentColor" />
+
+      {/* Head */}
+      <rect
+        x="18"
+        y="22"
+        width="64"
+        height="48"
+        rx="12"
+      />
+
+      {/* Eyes */}
+      <circle cx="37" cy="44" r="5" fill="currentColor" />
+      <circle cx="63" cy="44" r="5" fill="currentColor" />
+
+      {/* Mouth */}
+      <path d="M36 57Q50 64 64 57" />
+
+      {/* Body */}
+      <path d="M32 70V86" />
+      <path d="M68 70V86" />
+      <path d="M22 78H78" />
     </svg>
   );
 }
@@ -401,25 +562,11 @@ const calculators = [
     color: "blue",
   },
   {
-    icon: Vo2Icon,
-    title: "VO2 MAX",
-    subtitle: "CALCULATOR",
-    description: "Estimate your cardiovascular fitness.",
-    color: "purple",
-  },
-  {
     icon: BarbellIcon,
     title: "1-REP MAX",
     subtitle: "CALCULATOR",
     description: "Find your true strength potential.",
     color: "pink",
-  },
-  {
-    icon: StrengthIcon,
-    title: "STRENGTH",
-    subtitle: "STANDARDS",
-    description: "See where you stand compared to others.",
-    color: "blue",
   },
   {
     icon: CreatineIcon,
@@ -527,6 +674,8 @@ function Logo() {
 ========================= */
 
 function App() {
+  const [coachOpen, setCoachOpen] = useState(false);
+
   return (
     <main className="app">
 
@@ -558,8 +707,8 @@ function App() {
           </h1>
 
           <p className="hero-description">
-            Sharing my fitness journey, practical knowledge and resources to
-            help you build a stronger, healthier life.
+            Sharing my fitness journey, practical knowledge and
+            resources to help you build a stronger, healthier life.
           </p>
 
           <SocialLinks />
@@ -578,6 +727,82 @@ function App() {
         </div>
 
       </section>
+      {/* =========================
+          FREE RESOURCES
+      ========================= */}
+
+      <section className="section resources-section">
+
+        <div className="section-heading">
+          <h2>FREE RESOURCES</h2>
+
+          <p>
+            Free tools and resources to help you build your
+            fitness journey.
+          </p>
+        </div>
+
+        <div className="resources-grid">
+
+          {/* Google Drive */}
+          <a
+            className="resource-card drive-card"
+            href={DRIVE_RESOURCES_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="resource-icon">
+              <FolderIcon />
+            </div>
+
+            <div className="resource-content">
+              <span className="resource-label">
+                FREE DOWNLOADS
+              </span>
+
+              <h3>
+                Diet &amp; Fitness Resources
+              </h3>
+
+              <p>
+                Access my free diet, fitness and educational
+                resources.
+              </p>
+            </div>
+
+            <span className="resource-arrow">↗</span>
+          </a>
+
+          {/* AI Diet Coach */}
+          <button
+            type="button"
+            className="resource-card ai-card"
+            onClick={() => setCoachOpen(true)}
+          >
+            <div className="resource-icon">
+              <RobotIcon />
+            </div>
+
+            <div className="resource-content">
+              <span className="resource-label">
+                PHOENIXX AI
+              </span>
+
+              <h3>
+                AI Diet Plan Coach
+              </h3>
+
+              <p>
+                Create your personalized
+                AI prompt.
+              </p>
+            </div>
+
+            <span className="resource-arrow">↗</span>
+          </button>
+
+        </div>
+      </section>
 
       {/* =========================
           FITNESS CALCULATORS
@@ -587,9 +812,10 @@ function App() {
 
         <div className="section-heading">
           <h2>FREE FITNESS CALCULATORS</h2>
+
           <p>
-            Practical tools to help you train, eat and improve with real
-            numbers.
+            Practical tools to help you train, eat and improve
+            with real numbers.
           </p>
         </div>
 
@@ -600,6 +826,7 @@ function App() {
 
             return (
               <button
+                type="button"
                 className={`calculator-card ${item.color}`}
                 key={item.title}
                 onClick={() =>
@@ -637,7 +864,9 @@ function App() {
       <section className="section essentials-section">
 
         <div className="section-heading">
-          <h2>FAVORITES &amp; ESSENTIALS</h2>
+          <h2>
+            FAVORITES &amp; ESSENTIALS
+          </h2>
 
           <p>
             Tools, books and foods I personally use and recommend.
@@ -665,6 +894,7 @@ function App() {
 
                 <div className="essential-content">
                   <h3>{item.title}</h3>
+
                   <p>{item.description}</p>
                 </div>
 
@@ -700,7 +930,10 @@ function App() {
         aria-label="Send business inquiry by email"
       >
         <div>
-          <h2>Business &amp; Partnership Inquiries</h2>
+          <h2>
+            Business &amp; Partnership Inquiries
+          </h2>
+
           <p>
             For brand collaborations and opportunities.
           </p>
@@ -727,6 +960,7 @@ function App() {
       >
         <div>
           <h2>Personal Email</h2>
+
           <p>
             For personal messages and general inquiries.
           </p>
@@ -795,6 +1029,16 @@ function App() {
         </p>
 
       </footer>
+
+      {/* =========================
+          AI DIET COACH MODAL
+      ========================= */}
+
+      {coachOpen && (
+        <AIDietCoach
+          onClose={() => setCoachOpen(false)}
+        />
+      )}
 
     </main>
   );
