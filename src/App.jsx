@@ -541,42 +541,6 @@ function AmazonIcon() {
     </div>
   );
 }
-
-/* =========================
-   CALCULATORS
-========================= */
-
-const calculators = [
-  {
-    icon: FlameIcon,
-    title: "TDEE / CALORIE",
-    subtitle: "CALCULATOR",
-    description: "Find your maintenance and calorie goals.",
-    color: "pink",
-  },
-  {
-    icon: ShakerIcon,
-    title: "PROTEIN",
-    subtitle: "CALCULATOR",
-    description: "Calculate your daily protein needs.",
-    color: "blue",
-  },
-  {
-    icon: BarbellIcon,
-    title: "1-REP MAX",
-    subtitle: "CALCULATOR",
-    description: "Find your true strength potential.",
-    color: "pink",
-  },
-  {
-    icon: CreatineIcon,
-    title: "CREATINE",
-    subtitle: "CALCULATOR",
-    description: "Explore creatine dosage guidance.",
-    color: "purple",
-  },
-];
-
 /* =========================
    FAVORITES & ESSENTIALS
 ========================= */
