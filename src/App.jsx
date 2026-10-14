@@ -541,6 +541,42 @@ function AmazonIcon() {
     </div>
   );
 }
+
+/* =========================
+   CALCULATORS
+========================= */
+
+const calculators = [
+  {
+    icon: FlameIcon,
+    title: "TDEE / CALORIE",
+    subtitle: "CALCULATOR",
+    description: "Find your maintenance and calorie goals.",
+    color: "pink",
+  },
+  {
+    icon: ShakerIcon,
+    title: "PROTEIN",
+    subtitle: "CALCULATOR",
+    description: "Calculate your daily protein needs.",
+    color: "blue",
+  },
+  {
+    icon: BarbellIcon,
+    title: "1-REP MAX",
+    subtitle: "CALCULATOR",
+    description: "Find your true strength potential.",
+    color: "pink",
+  },
+  {
+    icon: CreatineIcon,
+    title: "CREATINE",
+    subtitle: "CALCULATOR",
+    description: "Explore creatine dosage guidance.",
+    color: "purple",
+  },
+];
+
 /* =========================
    FAVORITES & ESSENTIALS
 ========================= */
@@ -768,59 +804,7 @@ function App() {
         </div>
       </section>
 
-      {/* =========================
-          FITNESS CALCULATORS
-      ========================= */}
-
-      <section className="section calculators-section">
-
-        <div className="section-heading">
-          <h2>FREE FITNESS CALCULATORS</h2>
-
-          <p>
-            Practical tools to help you train, eat and improve
-            with real numbers.
-          </p>
-        </div>
-
-        <div className="calculator-grid">
-
-          {calculators.map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <button
-                type="button"
-                className={`calculator-card ${item.color}`}
-                key={item.title}
-                onClick={() =>
-                  alert(`${item.title} coming soon`)
-                }
-              >
-                <div className="card-glow" />
-
-                <div className="card-icon">
-                  <Icon />
-                </div>
-
-                <div className="card-content">
-                  <h3>
-                    {item.title}
-                    <br />
-                    {item.subtitle}
-                  </h3>
-
-                  <p>{item.description}</p>
-                </div>
-
-                <span className="arrow">↗</span>
-              </button>
-            );
-          })}
-
-        </div>
-      </section>
-
+      
       {/* =========================
           FAVORITES & ESSENTIALS
       ========================= */}
